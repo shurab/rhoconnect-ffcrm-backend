@@ -1,0 +1,88 @@
+<div data-role="page" data-add-back-btn="false">
+
+  <div data-role="header" data-position="inline">
+    <h1><%= @task.user_id %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse">
+      Back
+    </a>
+    <a href="<%= url_for :action => :edit, :id => @task.object %>" class="ui-btn-right" data-icon="star">
+      Edit
+    </a>
+  </div>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      
+          <li>
+            <div class="itemLabel">UserId</div>
+            <div class="itemValue"><%= @task.user_id %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">AssignedTo</div>
+            <div class="itemValue"><%= @task.assigned_to %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">CompletedBy</div>
+            <div class="itemValue"><%= @task.completed_by %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Name</div>
+            <div class="itemValue"><%= @task.name %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">AssetId</div>
+            <div class="itemValue"><%= @task.asset_id %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Priority</div>
+            <div class="itemValue"><%= @task.priority %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Category</div>
+            <div class="itemValue"><%= @task.category %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Bucket</div>
+            <div class="itemValue"><%= @task.bucket %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">DueAt</div>
+            <div class="itemValue"><%= Time.at(@task.due_at.to_i).strftime("%m-%d-%Y") %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">CompletedAt</div>
+            <div class="itemValue"><%= @task.completed_at %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">DeletedAt</div>
+            <div class="itemValue"><%= @task.deleted_at %></div>
+          </li>
+      
+          <!-- <li>
+            <div class="itemLabel">CreatedAt</div>
+            <div class="itemValue"><%= @task.created_at %></div>
+          </li>      
+          <li>
+            <div class="itemLabel">UpdatedAt</div>
+            <div class="itemValue"><%= @task.updated_at %></div>
+          </li> -->
+      
+          <li>
+            <div class="itemLabel">BackgroundInfo</div>
+            <div class="itemValue"><%= @task.background_info %></div>
+          </li>
+      
+    </ul>
+  </div>
+
+</div>

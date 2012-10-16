@@ -1,0 +1,40 @@
+<div data-role="page" data-add-back-btn="true">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :index %>
+    <h1><%= @campaign.assigned_to %></h1>
+    <%= link_to "Edit", :action => :edit, :id => @campaign.object %>
+  </div>
+
+  <div data-role="content">
+    <table>
+      
+      <tr>
+    	<td class="itemLabel">AssignedTo</td>
+        <td class="itemValue"><%= @campaign.assigned_to%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Name</td>
+        <td class="itemValue"><%= @campaign.name%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Status</td>
+        <td class="itemValue"><%= @campaign.status%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">StartsOn</td>
+        <td class="itemValue"><%= @campaign.starts_on%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">EndsOn</td>
+        <td class="itemValue"><%= @campaign.ends_on%></td>
+      </tr>
+      
+    </table>
+  </div>
+
+</div>

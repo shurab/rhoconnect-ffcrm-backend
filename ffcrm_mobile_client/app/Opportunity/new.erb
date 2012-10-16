@@ -1,0 +1,60 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>New <%= @opportunity.title %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @opportunity.object %>"/>
+
+      
+          <div data-role="fieldcontain">
+            <label for="opportunity[user_id]" class="fieldLabel">User</label>
+            <input type="text" id="opportunity[user_id]" name="opportunity[user_id]" <%= placeholder("User") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="opportunity[name]" class="fieldLabel">Name</label>
+            <input type="text" id="opportunity[name]" name="opportunity[name]" <%= placeholder("Name") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="opportunity[campaign_id]" class="fieldLabel">Campaign</label>
+            <input type="text" id="opportunity[campaign_id]" name="opportunity[campaign_id]" <%= placeholder("Campaign") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="opportunity[assigned_to]" class="fieldLabel">Assigned to</label>
+            <input type="text" id="opportunity[assigned_to]" name="opportunity[assigned_to]" <%= placeholder("Assigned to") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="opportunity[stage]" class="fieldLabel">Stage</label>
+            <input type="text" id="opportunity[stage]" name="opportunity[stage]" <%= placeholder("Stage") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="opportunity[probability]" class="fieldLabel">Probability</label>
+            <input type="text" id="opportunity[probability]" name="opportunity[probability]" <%= placeholder("Probability") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="opportunity[closes_on]" class="fieldLabel">Closes on</label>
+            <input type="text" id="opportunity[closes_on]" name="opportunity[closes_on]" <%= placeholder("Closes on") %> />
+          </div>
+      
+          <!-- <div data-role="fieldcontain">
+            <label for="opportunity[created_at]" class="fieldLabel">Created at</label>
+            <input type="text" id="opportunity[created_at]" name="opportunity[created_at]" <%= placeholder("Created at") %> />
+          </div> -->
+      
+
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>

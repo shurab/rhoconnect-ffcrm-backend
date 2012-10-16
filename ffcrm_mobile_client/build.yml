@@ -1,0 +1,35 @@
+sdkversion: 3.3.4
+name: ffcrm-client
+version: 1.0
+vendor: rhomobile
+build: debug
+bbver: 4.6
+applog: rholog.txt
+
+iphone:
+  configuration: Release
+  sdk: iphonesimulator5.1
+  #sdk: iphonesimulator5.0
+  provisionprofile:
+  codesignidentity:
+  entitlements:
+  BundleIdentifier: com.rhomobile.ffcrm-client
+  BundleURLScheme: ffcrm-client
+
+wp:
+  productid: '3a5cd080-d2a9-012f-5f83-482a1416020c'
+
+symbian:
+  uid: '0xe7a6aba2'
+
+android:
+  version: 4.0.3
+  # version: 3.2
+  # push:
+  #    sender: alexb@rhomobile.com
+ 
+capabilities:
+  - push
+  - vibrate #=> if you want to enable vibrate in your push messages
+
+extensions: ["json", "another-extension", "rhoconnect-push"]

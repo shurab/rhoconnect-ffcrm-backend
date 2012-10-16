@@ -1,0 +1,50 @@
+<div data-role="page" data-add-back-btn="false">
+
+  <div data-role="header" data-position="inline">
+    <h1><%= @account.name %></h1> <!-- @account.user_id -->
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse">
+      Back
+    </a>
+    <a href="<%= url_for :action => :edit, :id => @account.object %>" class="ui-btn-right" data-icon="star">
+      Edit
+    </a>
+  </div>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      
+          <li>
+            <div class="itemLabel">Category</div>
+            <div class="itemValue"><%= @account.category %></div>
+          </li>
+
+          <li>
+            <div class="itemLabel">UserId</div> <!-- User Id -->
+            <div class="itemValue"><%= @user.full_name %></div> <!-- @account.user_id -->
+          </li>
+      
+          <li>
+            <div class="itemLabel">AssignedTo</div>
+            <div class="itemValue"><%= @assigned_to ? @assigned_to.full_name : "" %></div>
+			<!-- @account.assigned_to -->
+          </li>
+      
+          <li>
+            <div class="itemLabel">Name</div>
+            <div class="itemValue"><%= @account.name %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Email</div>
+            <div class="itemValue"><%= @account.email %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">CreatedAt</div>
+            <div class="itemValue"><%= Time.at(@account.created_at.to_i).strftime("%m-%d-%Y") %></div> <!-- "%T %m-%d-%Y" -->
+          </li>
+      
+    </ul>
+  </div>
+
+</div>

@@ -1,0 +1,45 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>New <%= @campaign.title %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @campaign.object %>"/>
+
+      
+          <div data-role="fieldcontain">
+            <label for="campaign[assigned_to]" class="fieldLabel">Assigned to</label>
+            <input type="text" id="campaign[assigned_to]" name="campaign[assigned_to]" <%= placeholder("Assigned to") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="campaign[name]" class="fieldLabel">Name</label>
+            <input type="text" id="campaign[name]" name="campaign[name]" <%= placeholder("Name") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="campaign[status]" class="fieldLabel">Status</label>
+            <input type="text" id="campaign[status]" name="campaign[status]" <%= placeholder("Status") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="campaign[starts_on]" class="fieldLabel">Starts on: yyyy-mm-dd</label>
+            <input type="text" id="campaign[starts_on]" name="campaign[starts_on]" <%= placeholder("Starts on") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="campaign[ends_on]" class="fieldLabel">Ends on: yyyy-mm-dd</label>
+            <input type="text" id="campaign[ends_on]" name="campaign[ends_on]" <%= placeholder("Ends on") %> />
+          </div>
+      
+
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>

@@ -1,0 +1,58 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>Edit "<%= @account.name %>" </h1> <!-- @account.user_id -->
+    <a href="<%= url_for :action => :show, :id => @account.object %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+    <a href="<%= url_for :action => :delete, :id => @account.object %>" class="ui-btn-right" data-icon="delete" data-direction="reverse">
+      Delete
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+      <input type="hidden" name="id" value="<%= @account.object %>"/>
+
+      	<div data-role="fieldcontain">
+          <label for="account[category]" class="fieldLabel">Category</label>
+          <input type="text" id="account[category]" name="account[category]"  value="<%= @account.category %>" <%= placeholder("Category") %> />
+        </div>
+      
+          <div data-role="fieldcontain">
+            <label for="account[user_id]" class="fieldLabel">User</label>
+            <input type="text" id="account[user_id]" name="account[user_id]" value="<%= @account.user_id %>" <%= placeholder( "User" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="account[assigned_to]" class="fieldLabel">Assigned to</label>
+			<select id="account[assigned_to]" name="account[assigned_to]">
+			  <option value="" <%= "selected" if @account.assigned_to == "" %> > Unassigned </option> 				
+			  <% @users.each do |user| %> 
+			    <option value="<%= user.object %>" <%= "selected" if @account.assigned_to == user.object %>>
+				  <%= user.full_name %> 
+			    </option> 
+			  <% end %>
+			</select>
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="account[name]" class="fieldLabel">Name</label>
+            <input type="text" id="account[name]" name="account[name]" value="<%= @account.name %>" <%= placeholder( "Name" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="account[email]" class="fieldLabel">Email</label>
+            <input type="text" id="account[email]" name="account[email]" value="<%= @account.email %>" <%= placeholder( "Email" ) %> />
+          </div>
+      
+          <!-- <div data-role="fieldcontain">
+            <label for="account[created_at]" class="fieldLabel">Created at</label>
+            <input type="text" id="account[created_at]" name="account[created_at]" value="<%= @account.created_at %>" <%= placeholder( "Created at" ) %> />
+          </div> -->
+      
+      <input type="submit" value="Update"/>
+    </form>
+  </div>
+
+</div>

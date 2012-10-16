@@ -1,0 +1,55 @@
+<div data-role="page" data-add-back-btn="true">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :index %>
+    <h1><%= @contact.user_id %></h1>
+    <%= link_to "Edit", :action => :edit, :id => @contact.object %>
+  </div>
+
+  <div data-role="content">
+    <table>
+      
+      <tr>
+    	<td class="itemLabel">UserId</td>
+        <td class="itemValue"><%= @contact.user_id%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">LeadId</td>
+        <td class="itemValue"><%= @contact.lead_id%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">AssignedTo</td>
+        <td class="itemValue"><%= @contact.assigned_to%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">FirstName</td>
+        <td class="itemValue"><%= @contact.first_name%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">LastName</td>
+        <td class="itemValue"><%= @contact.last_name%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Title</td>
+        <td class="itemValue"><%= @contact.title%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Email</td>
+        <td class="itemValue"><%= @contact.email%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">CreatedAt</td>
+        <td class="itemValue"><%= @contact.created_at%></td>
+      </tr>
+      
+    </table>
+  </div>
+
+</div>

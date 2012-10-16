@@ -1,0 +1,65 @@
+<div data-role="page" data-add-back-btn="true">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :index %>
+    <h1><%= @lead.user_id %></h1>
+    <%= link_to "Edit", :action => :edit, :id => @lead.object %>
+  </div>
+
+  <div data-role="content">
+    <table>
+      
+      <tr>
+    	<td class="itemLabel">UserId</td>
+        <td class="itemValue"><%= @lead.user_id%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">CampaignId</td>
+        <td class="itemValue"><%= @lead.campaign_id%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">AssignedTo</td>
+        <td class="itemValue"><%= @lead.assigned_to%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">FirstName</td>
+        <td class="itemValue"><%= @lead.first_name%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">LastName</td>
+        <td class="itemValue"><%= @lead.last_name%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Title</td>
+        <td class="itemValue"><%= @lead.title%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Company</td>
+        <td class="itemValue"><%= @lead.company%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Status</td>
+        <td class="itemValue"><%= @lead.status%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Email</td>
+        <td class="itemValue"><%= @lead.email%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">CreatedAt</td>
+        <td class="itemValue"><%= @lead.created_at%></td>
+      </tr>
+      
+    </table>
+  </div>
+
+</div>

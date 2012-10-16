@@ -1,0 +1,69 @@
+<div data-role="page" data-add-back-btn="false">
+
+  <div data-role="header" data-position="inline">
+    <h1><%= "#{@lead.first_name} #{@lead.last_name}" %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse">
+      Back
+    </a>
+    <a href="<%= url_for :action => :edit, :id => @lead.object %>" class="ui-btn-right" data-icon="star">
+      Edit
+    </a>
+  </div>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      
+          <li>
+            <div class="itemLabel">UserId</div>
+            <div class="itemValue"><%= @lead.user_id %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">CampaignId</div>
+            <div class="itemValue"><%= @lead.campaign_id %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">AssignedTo</div>
+            <div class="itemValue"><%= @lead.assigned_to %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">FirstName</div>
+            <div class="itemValue"><%= @lead.first_name %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">LastName</div>
+            <div class="itemValue"><%= @lead.last_name %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Title</div>
+            <div class="itemValue"><%= @lead.title %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Company</div>
+            <div class="itemValue"><%= @lead.company %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Status</div>
+            <div class="itemValue"><%= @lead.status %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Email</div>
+            <div class="itemValue"><%= @lead.email %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">CreatedAt</div>
+            <div class="itemValue"><%= Time.at(@lead.created_at.to_i).strftime("%m-%d-%Y") %></div>
+          </li>
+      
+    </ul>
+  </div>
+
+</div>

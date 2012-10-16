@@ -1,0 +1,90 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>Edit <%= @task.user_id %></h1>
+    <a href="<%= url_for :action => :show, :id => @task.object %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+    <a href="<%= url_for :action => :delete, :id => @task.object %>" class="ui-btn-right" data-icon="delete" data-direction="reverse">
+      Delete
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+      <input type="hidden" name="id" value="<%= @task.object %>"/>
+      
+          <div data-role="fieldcontain">
+            <label for="task[user_id]" class="fieldLabel">User</label>
+            <input type="text" id="task[user_id]" name="task[user_id]" value="<%= @task.user_id %>" <%= placeholder( "User" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="task[assigned_to]" class="fieldLabel">Assigned to</label>
+            <input type="text" id="task[assigned_to]" name="task[assigned_to]" value="<%= @task.assigned_to %>" <%= placeholder( "Assigned to" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="task[completed_by]" class="fieldLabel">Completed by</label>
+            <input type="text" id="task[completed_by]" name="task[completed_by]" value="<%= @task.completed_by %>" <%= placeholder( "Completed by" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="task[name]" class="fieldLabel">Name</label>
+            <input type="text" id="task[name]" name="task[name]" value="<%= @task.name %>" <%= placeholder( "Name" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="task[asset_id]" class="fieldLabel">Asset</label>
+            <input type="text" id="task[asset_id]" name="task[asset_id]" value="<%= @task.asset_id %>" <%= placeholder( "Asset" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="task[priority]" class="fieldLabel">Priority</label>
+            <input type="text" id="task[priority]" name="task[priority]" value="<%= @task.priority %>" <%= placeholder( "Priority" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="task[category]" class="fieldLabel">Category</label>
+            <input type="text" id="task[category]" name="task[category]" value="<%= @task.category %>" <%= placeholder( "Category" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="task[bucket]" class="fieldLabel">Bucket</label>
+            <input type="text" id="task[bucket]" name="task[bucket]" value="<%= @task.bucket %>" <%= placeholder( "Bucket" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="task[due_at]" class="fieldLabel">Due at</label>
+            <input type="text" id="task[due_at]" name="task[due_at]" value="<%= @task.due_at %>" <%= placeholder( "Due at" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="task[completed_at]" class="fieldLabel">Completed at</label>
+            <input type="text" id="task[completed_at]" name="task[completed_at]" value="<%= @task.completed_at %>" <%= placeholder( "Completed at" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="task[deleted_at]" class="fieldLabel">Deleted at</label>
+            <input type="text" id="task[deleted_at]" name="task[deleted_at]" value="<%= @task.deleted_at %>" <%= placeholder( "Deleted at" ) %> />
+          </div>
+      
+          <!-- <div data-role="fieldcontain">
+            <label for="task[created_at]" class="fieldLabel">Created at</label>
+            <input type="text" id="task[created_at]" name="task[created_at]" value="<%= @task.created_at %>" <%= placeholder( "Created at" ) %> />
+          </div>
+          <div data-role="fieldcontain">
+            <label for="task[updated_at]" class="fieldLabel">Updated at</label>
+            <input type="text" id="task[updated_at]" name="task[updated_at]" value="<%= @task.updated_at %>" <%= placeholder( "Updated at" ) %> />
+          </div> -->
+      
+          <div data-role="fieldcontain">
+            <label for="task[background_info]" class="fieldLabel">Background info</label>
+            <input type="text" id="task[background_info]" name="task[background_info]" value="<%= @task.background_info %>" <%= placeholder( "Background info" ) %> />
+          </div>
+      
+      <input type="submit" value="Update"/>
+    </form>
+  </div>
+
+</div>

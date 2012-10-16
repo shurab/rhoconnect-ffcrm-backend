@@ -1,0 +1,55 @@
+<div data-role="page" data-add-back-btn="true">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :index %>
+    <h1><%= @opportunity.user_id %></h1>
+    <%= link_to "Edit", :action => :edit, :id => @opportunity.object %>
+  </div>
+
+  <div data-role="content">
+    <table>
+      
+      <tr>
+    	<td class="itemLabel">UserId</td>
+        <td class="itemValue"><%= @opportunity.user_id%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Name</td>
+        <td class="itemValue"><%= @opportunity.name%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">CampaignId</td>
+        <td class="itemValue"><%= @opportunity.campaign_id%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">AssignedTo</td>
+        <td class="itemValue"><%= @opportunity.assigned_to%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Stage</td>
+        <td class="itemValue"><%= @opportunity.stage%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Probability</td>
+        <td class="itemValue"><%= @opportunity.probability%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">ClosesOn</td>
+        <td class="itemValue"><%= @opportunity.closes_on%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">CreatedAt</td>
+        <td class="itemValue"><%= @opportunity.created_at%></td>
+      </tr>
+      
+    </table>
+  </div>
+
+</div>

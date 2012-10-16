@@ -1,0 +1,68 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :index %>
+    <h1>New Lead</h1>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @lead.object %>"/>
+      <table>
+          
+            <tr>
+                <td class="itemLabel">User: </td>
+                <td class="itemValue"><input type="text" name="lead[user_id]"/></td>
+            </tr>
+          
+            <tr>
+                <td class="itemLabel">Campaign: </td>
+                <td class="itemValue"><input type="text" name="lead[campaign_id]"/></td>
+            </tr>
+          
+            <tr>
+                <td class="itemLabel">Assigned to: </td>
+                <td class="itemValue"><input type="text" name="lead[assigned_to]"/></td>
+            </tr>
+          
+            <tr>
+                <td class="itemLabel">First name: </td>
+                <td class="itemValue"><input type="text" name="lead[first_name]"/></td>
+            </tr>
+          
+            <tr>
+                <td class="itemLabel">Last name: </td>
+                <td class="itemValue"><input type="text" name="lead[last_name]"/></td>
+            </tr>
+          
+            <tr>
+                <td class="itemLabel">Title: </td>
+                <td class="itemValue"><input type="text" name="lead[title]"/></td>
+            </tr>
+          
+            <tr>
+                <td class="itemLabel">Company: </td>
+                <td class="itemValue"><input type="text" name="lead[company]"/></td>
+            </tr>
+          
+            <tr>
+                <td class="itemLabel">Status: </td>
+                <td class="itemValue"><input type="text" name="lead[status]"/></td>
+            </tr>
+          
+            <tr>
+                <td class="itemLabel">Email: </td>
+                <td class="itemValue"><input type="text" name="lead[email]"/></td>
+            </tr>
+          
+            <tr>
+                <td class="itemLabel">Created at: </td>
+                <td class="itemValue"><input type="text" name="lead[created_at]"/></td>
+            </tr>
+          
+      </table>
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>

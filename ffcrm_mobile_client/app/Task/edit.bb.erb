@@ -1,0 +1,89 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :show, :id => @task.object %>
+    <h1>Edit <%= @task.user_id%></h1>
+    <%= link_to "Delete", :action => :delete, :id => @task.object %>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+      <input type="hidden" name="id" value="<%= @task.object %>"/>
+      <table>
+          
+          <tr>
+              <td class="itemLabel">User: </td>
+              <td class="itemValue"><input type="text" name="task[user_id]" value="<%= @task.user_id %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Assigned to: </td>
+              <td class="itemValue"><input type="text" name="task[assigned_to]" value="<%= @task.assigned_to %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Completed by: </td>
+              <td class="itemValue"><input type="text" name="task[completed_by]" value="<%= @task.completed_by %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Name: </td>
+              <td class="itemValue"><input type="text" name="task[name]" value="<%= @task.name %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Asset: </td>
+              <td class="itemValue"><input type="text" name="task[asset_id]" value="<%= @task.asset_id %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Priority: </td>
+              <td class="itemValue"><input type="text" name="task[priority]" value="<%= @task.priority %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Category: </td>
+              <td class="itemValue"><input type="text" name="task[category]" value="<%= @task.category %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Bucket: </td>
+              <td class="itemValue"><input type="text" name="task[bucket]" value="<%= @task.bucket %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Due at: </td>
+              <td class="itemValue"><input type="text" name="task[due_at]" value="<%= @task.due_at %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Completed at: </td>
+              <td class="itemValue"><input type="text" name="task[completed_at]" value="<%= @task.completed_at %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Deleted at: </td>
+              <td class="itemValue"><input type="text" name="task[deleted_at]" value="<%= @task.deleted_at %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Created at: </td>
+              <td class="itemValue"><input type="text" name="task[created_at]" value="<%= @task.created_at %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Updated at: </td>
+              <td class="itemValue"><input type="text" name="task[updated_at]" value="<%= @task.updated_at %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Background info: </td>
+              <td class="itemValue"><input type="text" name="task[background_info]" value="<%= @task.background_info %>"/></td>
+          </tr>
+          
+      </table>
+      <input type="submit" value="Update"/>
+    </form>
+  </div>
+
+</div>

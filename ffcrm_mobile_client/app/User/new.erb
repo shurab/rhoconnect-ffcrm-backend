@@ -1,0 +1,50 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>New <%= @user.title %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @user.object %>"/>
+
+      
+          <div data-role="fieldcontain">
+            <label for="user[username]" class="fieldLabel">Username</label>
+            <input type="text" id="user[username]" name="user[username]" <%= placeholder("Username") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="user[email]" class="fieldLabel">Email</label>
+            <input type="text" id="user[email]" name="user[email]" <%= placeholder("Email") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="user[first_name]" class="fieldLabel">First name</label>
+            <input type="text" id="user[first_name]" name="user[first_name]" <%= placeholder("First name") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="user[last_name]" class="fieldLabel">Last name</label>
+            <input type="text" id="user[last_name]" name="user[last_name]" <%= placeholder("Last name") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="user[title]" class="fieldLabel">Title</label>
+            <input type="text" id="user[title]" name="user[title]" <%= placeholder("Title") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="user[company]" class="fieldLabel">Company</label>
+            <input type="text" id="user[company]" name="user[company]" <%= placeholder("Company") %> />
+          </div>
+      
+
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>

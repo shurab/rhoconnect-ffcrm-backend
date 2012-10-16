@@ -1,0 +1,43 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :index %>
+    <h1>New Account</h1>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @account.object %>"/>
+      <table>
+          
+            <tr>
+                <td class="itemLabel">User: </td>
+                <td class="itemValue"><input type="text" name="account[user_id]"/></td>
+            </tr>
+          
+            <tr>
+                <td class="itemLabel">Assigned to: </td>
+                <td class="itemValue"><input type="text" name="account[assigned_to]"/></td>
+            </tr>
+          
+            <tr>
+                <td class="itemLabel">Name: </td>
+                <td class="itemValue"><input type="text" name="account[name]"/></td>
+            </tr>
+          
+            <tr>
+                <td class="itemLabel">Email: </td>
+                <td class="itemValue"><input type="text" name="account[email]"/></td>
+            </tr>
+          
+            <tr>
+                <td class="itemLabel">Created at: </td>
+                <td class="itemValue"><input type="text" name="account[created_at]"/></td>
+            </tr>
+          
+      </table>
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>

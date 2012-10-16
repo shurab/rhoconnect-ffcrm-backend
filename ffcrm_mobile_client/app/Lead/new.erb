@@ -1,0 +1,69 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>New <%= @lead.title %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @lead.object %>"/>
+
+      
+          <div data-role="fieldcontain">
+            <label for="lead[user_id]" class="fieldLabel">User</label>
+            <input type="text" id="lead[user_id]" name="lead[user_id]" <%= placeholder("User") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="lead[campaign_id]" class="fieldLabel">Campaign</label>
+            <input type="text" id="lead[campaign_id]" name="lead[campaign_id]" <%= placeholder("Campaign") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="lead[assigned_to]" class="fieldLabel">Assigned to</label>
+            <input type="text" id="lead[assigned_to]" name="lead[assigned_to]" <%= placeholder("Assigned to") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="lead[first_name]" class="fieldLabel">First name</label>
+            <input type="text" id="lead[first_name]" name="lead[first_name]" <%= placeholder("First name") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="lead[last_name]" class="fieldLabel">Last name</label>
+            <input type="text" id="lead[last_name]" name="lead[last_name]" <%= placeholder("Last name") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="lead[title]" class="fieldLabel">Title</label>
+            <input type="text" id="lead[title]" name="lead[title]" <%= placeholder("Title") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="lead[company]" class="fieldLabel">Company</label>
+            <input type="text" id="lead[company]" name="lead[company]" <%= placeholder("Company") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="lead[status]" class="fieldLabel">Status</label>
+            <input type="text" id="lead[status]" name="lead[status]" <%= placeholder("Status") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="lead[email]" class="fieldLabel">Email</label>
+            <input type="text" id="lead[email]" name="lead[email]" <%= placeholder("Email") %> />
+          </div>
+      
+          <!-- <div data-role="fieldcontain">
+            <label for="lead[created_at]" class="fieldLabel">Created at</label>
+            <input type="text" id="lead[created_at]" name="lead[created_at]" <%= placeholder("Created at") %> />
+          </div> -->      
+
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>

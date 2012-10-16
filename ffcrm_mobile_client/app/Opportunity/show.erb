@@ -1,0 +1,59 @@
+<div data-role="page" data-add-back-btn="false">
+
+  <div data-role="header" data-position="inline">
+    <h1><%= @opportunity.name %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse">
+      Back
+    </a>
+    <a href="<%= url_for :action => :edit, :id => @opportunity.object %>" class="ui-btn-right" data-icon="star">
+      Edit
+    </a>
+  </div>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      
+          <li>
+            <div class="itemLabel">UserId</div>
+            <div class="itemValue"><%= @opportunity.user_id %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Name</div>
+            <div class="itemValue"><%= @opportunity.name %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">CampaignId</div>
+            <div class="itemValue"><%= @opportunity.campaign_id %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">AssignedTo</div>
+            <div class="itemValue"><%= @opportunity.assigned_to %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Stage</div>
+            <div class="itemValue"><%= @opportunity.stage %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Probability</div>
+            <div class="itemValue"><%= @opportunity.probability %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">ClosesOn</div>
+            <div class="itemValue"><%= @opportunity.closes_on %></div>
+          </li>
+      
+          <!-- <li>
+            <div class="itemLabel">CreatedAt</div>
+            <div class="itemValue"><%= @opportunity.created_at %></div>
+          </li> -->
+      
+    </ul>
+  </div>
+
+</div>

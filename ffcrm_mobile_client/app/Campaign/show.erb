@@ -1,0 +1,44 @@
+<div data-role="page" data-add-back-btn="false">
+
+  <div data-role="header" data-position="inline">
+    <h1><%= @campaign.name %></h1> <!-- @campaign.assigned_to -->
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse">
+      Back
+    </a>
+    <a href="<%= url_for :action => :edit, :id => @campaign.object %>" class="ui-btn-right" data-icon="star">
+      Edit
+    </a>
+  </div>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      
+          <li>
+            <div class="itemLabel">AssignedTo</div>
+            <div class="itemValue"><%= @campaign.assigned_to %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Name</div>
+            <div class="itemValue"><%= @campaign.name %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Status</div>
+            <div class="itemValue"><%= @campaign.status %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">StartsOn</div>
+            <div class="itemValue"><%= @campaign.starts_on %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">EndsOn</div>
+            <div class="itemValue"><%= @campaign.ends_on %></div>
+          </li>
+      
+    </ul>
+  </div>
+
+</div>

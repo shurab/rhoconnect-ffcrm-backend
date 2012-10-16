@@ -1,0 +1,31 @@
+#Sources
+:sources:
+  Account:
+    :poll_interval: 300
+    :partition_type: app
+
+:development:
+  :api_token: sometokenforme
+  :licensefile: settings/license.key
+  :redis: localhost:6379
+  :syncserver: http://localhost:9292/api/application/
+#  :push_server: http://ffcrm-client:secret@localhost:8675/
+  # :c2dm_username: alexb@rhomobile.com
+  # :c2dm_passwd: priv%0328
+#  :authtoken: DQAAAOwAAABlG9jU7WpwRzdoNEKK3JlzJP_iAkh8LYwRjmvjP22P_-k3Ym0FCxFk_oqpvl-2OjAvkTSdgZXwiq0SEqlW4kABgc-05GwOkiGhryTGHNjAdejaOWtvE0yDuO8Vm4vWomXKDU5t_og-kh-AJQwbICpPkRXV8mKOrOYG0BaqM869AIZDlXLIHW-Tpa7XtVTTEDZi2qnVK1X0ZiDiZTA1iRyl3hzAEtBagk3IvC_SG66aUWgTEaJvsk047hGFR--JzArFQaVimwzVL0pO0HMFsc36l4V-gmUbk3mralSXZN8cDInlercIWZ5wQWxMGfLaR24
+#  :push_notify_default: 'true'
+    
+:test:
+  :api_token: sometokenforme
+  :licensefile: settings/license.key
+  :redis: localhost:6379
+  :syncserver: http://localhost:9292/api/application/
+  # :push_server: http://appname:secret@localhost:8675/
+#  :authtoken: DQAAAOwAAABlG9jU7WpwRzdoNEKK3JlzJP_iAkh8LYwRjmvjP22P_-k3Ym0FCxFk_oqpvl-2OjAvkTSdgZXwiq0SEqlW4kABgc-05GwOkiGhryTGHNjAdejaOWtvE0yDuO8Vm4vWomXKDU5t_og-kh-AJQwbICpPkRXV8mKOrOYG0BaqM869AIZDlXLIHW-Tpa7XtVTTEDZi2qnVK1X0ZiDiZTA1iRyl3hzAEtBagk3IvC_SG66aUWgTEaJvsk047hGFR--JzArFQaVimwzVL0pO0HMFsc36l4V-gmUbk3mralSXZN8cDInlercIWZ5wQWxMGfLaR24
+:production:
+  :api_token: sometokenforme
+  :licensefile: settings/license.key
+  :redis: localhost:6379
+  :syncserver: http://localhost:9292/api/application/
+#  :push_server: http://ffcrm-client:secret@localhost:8675/
+#  :authtoken: DQAAAOwAAABlG9jU7WpwRzdoNEKK3JlzJP_iAkh8LYwRjmvjP22P_-k3Ym0FCxFk_oqpvl-2OjAvkTSdgZXwiq0SEqlW4kABgc-05GwOkiGhryTGHNjAdejaOWtvE0yDuO8Vm4vWomXKDU5t_og-kh-AJQwbICpPkRXV8mKOrOYG0BaqM869AIZDlXLIHW-Tpa7XtVTTEDZi2qnVK1X0ZiDiZTA1iRyl3hzAEtBagk3IvC_SG66aUWgTEaJvsk047hGFR--JzArFQaVimwzVL0pO0HMFsc36l4V-gmUbk3mralSXZN8cDInlercIWZ5wQWxMGfLaR24

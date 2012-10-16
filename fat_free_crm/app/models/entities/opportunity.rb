@@ -38,6 +38,12 @@
 #
 
 class Opportunity < ActiveRecord::Base
+  include Rhoconnect::Resource
+  
+  def partition
+    :app #lambda { self.user.username }
+  end  
+  
   belongs_to  :user
   belongs_to  :campaign
   belongs_to  :assignee, :class_name => "User", :foreign_key => :assigned_to
@@ -172,6 +178,15 @@ class Opportunity < ActiveRecord::Base
       end
     end
     opportunity
+  end
+
+  #----------------------------------------------------------------------------
+  def self.rhoconnect_query(partition, attributes = nil)
+    # puts "partition: #{partition}"
+    # user = User.where(:username => partition)
+    # puts "#{user.inspect}"
+    # Opportunity.where(:user_id => user.first.id) if user
+    Opportunity.all
   end
 
   private

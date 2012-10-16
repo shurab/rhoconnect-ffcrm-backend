@@ -3,7 +3,7 @@ source :rubygems
 # Uncomment the database that you have configured in config/database.yml
 # ----------------------------------------------------------------------
 # gem 'mysql2', '0.3.10'
-# gem 'sqlite3'
+gem 'sqlite3'
 gem 'pg', '~> 0.13.2'
 
 # Allows easy switching between locally developed gems, and gems installed from rubygems.org
@@ -52,6 +52,7 @@ group :development, :test do
     gem 'debugger', :platform => :mri_19
   end
   gem 'pry-rails'
+  gem 'thin'
 end
 
 group :test do
@@ -72,7 +73,6 @@ group :heroku do
   gem 'unicorn', :platform => :ruby
 end
 
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -84,3 +84,6 @@ group :assets do
 end
 
 gem 'turbo-sprockets-rails3'
+
+# rhoconnect plugin
+gem 'rhoconnect-rb', '0.3.2'

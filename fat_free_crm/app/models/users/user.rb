@@ -52,6 +52,12 @@
 #
 
 class User < ActiveRecord::Base
+  include Rhoconnect::Resource
+  
+  def partition
+    :app
+  end
+   
   attr_protected :admin, :suspended_at
 
   before_create  :check_if_needs_approval
@@ -151,6 +157,12 @@ class User < ActiveRecord::Base
   def group_ids=(value)
     value = value.join.split(',').map(&:to_i) if value.map{|v| v.to_s.include?(',')}.any?
     super(value)
+  end
+
+  # rhoconnect query
+  #----------------------------------------------------------------------------
+  def self.rhoconnect_query(partition, attributes = nil)
+    User.all
   end
 
   private

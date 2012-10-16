@@ -42,6 +42,13 @@
 #
 
 class Campaign < ActiveRecord::Base
+  include Rhoconnect::Resource
+  
+  def partition
+    :app
+    # lambda { self.user.username }
+  end  
+  
   belongs_to  :user
   belongs_to  :assignee, :class_name => "User", :foreign_key => :assigned_to
   has_many    :tasks, :as => :asset, :dependent => :destroy#, :order => 'created_at DESC'
@@ -101,6 +108,14 @@ class Campaign < ActiveRecord::Base
       attachment.send("decrement_#{attachment.class.name.tableize}_count")
       attachment.update_attribute(:campaign, nil)
     end
+  end
+
+  #----------------------------------------------------------------------------
+  def self.rhoconnect_query(partition, attributes = nil)
+    #puts "partition: #{partition}"
+    # user = User.where(:username => partition)
+    # Campaign.where(:user_id => user.first.id) if user
+    Campaign.all  
   end
 
   private

@@ -49,6 +49,12 @@
 #
 
 class Lead < ActiveRecord::Base
+  include Rhoconnect::Resource
+  
+  def partition
+    :app #lambda { self.user.username }
+  end
+  
   belongs_to  :user
   belongs_to  :campaign
   belongs_to  :assignee, :class_name => "User", :foreign_key => :assigned_to
@@ -171,6 +177,13 @@ class Lead < ActiveRecord::Base
     end
   end
   alias :name :full_name
+
+  #----------------------------------------------------------------------------
+  def self.rhoconnect_query(partition, attributes = nil)
+    # user = User.where(:username => partition)
+    # Lead.where(:user_id => user.first.id) if user
+    Lead.all
+  end
 
 private
 

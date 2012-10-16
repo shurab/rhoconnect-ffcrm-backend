@@ -49,6 +49,13 @@
 #
 
 class Contact < ActiveRecord::Base
+  include Rhoconnect::Resource
+  
+  def partition
+    :app
+    # lambda { self.user.username }
+  end
+    
   belongs_to  :user
   belongs_to  :lead
   belongs_to  :assignee, :class_name => "User", :foreign_key => :assigned_to
@@ -214,6 +221,13 @@ class Contact < ActiveRecord::Base
         :related => self
        )
     end
+  end
+
+  #----------------------------------------------------------------------------
+  def self.rhoconnect_query(partition, attributes = nil)
+    # user = User.where(:username => partition)
+    # Contact.where(:user_id => user.first.id) if user
+    Contact.all
   end
 
   private

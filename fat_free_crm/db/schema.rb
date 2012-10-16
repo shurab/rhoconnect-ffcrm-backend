@@ -216,10 +216,10 @@ ActiveRecord::Schema.define(:version => 20120801032706) do
     t.string   "hint"
     t.string   "placeholder"
     t.string   "as",             :limit => 32
-    t.text     "collection"
+    t.text     "collection",     :limit => 255
     t.boolean  "disabled"
     t.boolean  "required"
-    t.integer  "maxlength"
+    t.integer  "maxlength",      :limit => 4
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
     t.integer  "pair_id"

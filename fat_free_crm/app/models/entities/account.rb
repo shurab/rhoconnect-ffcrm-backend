@@ -38,6 +38,12 @@
 #
 
 class Account < ActiveRecord::Base
+  include Rhoconnect::Resource
+     
+  def partition
+    :app
+  end
+    
   belongs_to  :user
   belongs_to  :assignee, :class_name => "User", :foreign_key => :assigned_to
   has_many    :account_contacts, :dependent => :destroy
@@ -130,6 +136,30 @@ class Account < ActiveRecord::Base
       end
     end
     account
+  end
+
+  #----------------------------------------------------------------------------
+  def self.rhoconnect_query(partition, attributes = nil)
+    puts "Account#rhoconnect_query: partition = #{partition}, #{partition.class}"        
+    puts "Account#rhoconnect_query: attributes = #{attributes}"
+    user = User.find_by_username(partition) if partition != "app" 
+
+    if attributes # paginate through Account data
+      page_size  = attributes['limit']
+      page_offset = attributes['offset']
+    end
+    page_size   ||= Account.count
+    page_offset ||= 0
+
+    if partition != "app"
+      Account.where(:user_id => user.id).limit(page_size).offset(page_offset) if user
+    else
+      if attributes
+        Account.limit(page_size).offset(page_offset)
+      else
+        Account.all
+      end
+    end
   end
 
   private

@@ -38,6 +38,12 @@
 #
 
 class Task < ActiveRecord::Base
+  include Rhoconnect::Resource
+  
+  def partition
+    lambda { self.user.username }
+  end
+  
   attr_accessor :calendar
 
   belongs_to :user
@@ -207,6 +213,15 @@ class Task < ActiveRecord::Base
       hash
     end
   end
+
+  #----------------------------------------------------------------------------
+  def self.rhoconnect_query(partition, attributes = nil)
+    user = User.where(:username => partition)
+    # puts "**** Task.rhoconnect_query: partition = #{partition}, attributes = #{attributes}, user = #{user}"
+    # Task.where(:user_id => user.first.id) if user
+    Task.where("((user_id = :user_id AND assigned_to IS NULL) OR assigned_to = :user_id) AND (completed_at IS NULL)", 
+      :user_id => user.first.id) if user
+  end  
 
   private
   #----------------------------------------------------------------------------

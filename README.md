@@ -66,7 +66,8 @@ TODO: Check Rhoconenct Web console
 $ rake run:rhosimulator
 ```
 
-
 TODO:
 -------------------------------------------------------------
+* Rhodes client needs more work in GUI, esp. in create/update forms
+* RhoConnect app should demonstrate usage of associations between models
 

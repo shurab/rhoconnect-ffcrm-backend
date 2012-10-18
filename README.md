@@ -26,8 +26,9 @@ All Fat Free CRM models have partitioned at application level (:app) and shared 
 RhoConnect Server
 -------------------------------------------------------------
 
-TODO:
-
+RhoConnect has one source adapter for `Account` model and shows how plugin REST API should be used in update/create/delete mothods.
+Method `query` demonstates usage of RhoConeect API method `stash_result`. This method might be very usuful in the case of 
+large datasets on backend.
 
 Rhodes Client application
 -------------------------------------------------------------
